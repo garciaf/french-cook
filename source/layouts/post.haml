@@ -15,7 +15,10 @@
 
     %h1.post-title= current_article.title
 
-    %section.post-content= content
+    %section.post-content
+      - if cover?
+        %p= cover
+      = content
 
     %footer.post-footer
       %section.author

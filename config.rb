@@ -5,25 +5,25 @@ require 'sanitize'
 ###
 
 # Time.zone = "UTC"
-
+config = YAML.load_file("parameter.yml")
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
-  # blog.taglink = "tags/{tag}.html"
+  blog.sources = "blog/{year}-{month}-{day}-{title}.html"
+  blog.taglink = "tags/{tag}.html"
   # blog.layout = "layout"
-  # blog.summary_separator = /(READMORE)/
+  blog.summary_separator = /READMORE/
   # blog.summary_length = 250
-  # blog.year_link = "{year}.html"
-  # blog.month_link = "{year}/{month}.html"
-  # blog.day_link = "{year}/{month}/{day}.html"
+  blog.year_link = "{year}.html"
+  blog.month_link = "{year}/{month}.html"
+  blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
-  # blog.tag_template = "tag.html"
-  # blog.calendar_template = "calendar.html"
+  blog.tag_template = "tag.html"
+  blog.calendar_template = "calendar.html"
 
   # Enable pagination
   blog.paginate = true
@@ -32,12 +32,12 @@ activate :blog do |blog|
 end
 
 # Required
-set :blog_url, 'http://www.example.com'
-set :blog_name, 'Middleman'
-set :blog_description, 'Makes developing websites simple.'
-set :author_name, 'Middleman'
-set :author_bio, 'Middleman is a static site generator using all the ' \
-                 'shortcuts and tools in modern web development.'
+set :blog_url, 'http://the-french-cook.com/'
+set :blog_name, 'The French cook '
+set :blog_description, 'Make the world a better place to eat'
+set :author_name, 'French Cooker'
+set :author_bio, 'Fight the bad food with the taste of good food ' 
+
 # Optional
 set :author_locaton, nil
 set :author_website, nil
@@ -78,7 +78,14 @@ page '/feed.xml', layout: false
 ###
 # Helpers
 ###
-
+activate :deploy do |deploy|
+  deploy.method = :ftp
+  deploy.host = config['deploy']['host']
+  deploy.user = config['deploy']['user']
+  deploy.password = config['deploy']['password']
+  deploy.path = config['deploy']['path']
+  deploy.build_before = true # default: false
+end
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
@@ -102,71 +109,6 @@ activate :syntax, line_numbers: true
 # end
 
 helpers do
-  def page_title
-    title = blog_name.dup
-    if current_page.data.title
-      title << ": #{current_page.data.title}"
-    elsif is_blog_article?
-      title << ": #{current_article.title}"
-    end
-    title
-  end
-
-  def page_description
-    if is_blog_article?
-      Sanitize.clean(current_article.summary(150, '')).strip.gsub(/\s+/, ' ')
-    else
-      blog_description
-    end
-  end
-
-  def page_class
-    is_blog_article? ? 'post-template tag-getting-started' : 'home-template'
-  end
-
-  def summary(article)
-    Sanitize.clean(article.summary, whitespace_elements: %w(h1))
-  end
-
-  def author
-    {
-      bio: author_bio,
-      location: author_locaton,
-      name: author_name,
-      website: author_website
-    }
-  end
-
-  def tags?(article = current_article)
-    article.tags.present?
-  end
-  def tags(article = current_article, separator = ' | ')
-    article.tags.join(separator)
-  end
-
-  def current_article_url
-    URI.join(blog_url, current_article.url)
-  end
-
-  def blog_logo?
-    return false if blog_logo.blank?
-    File.exists?(File.join('source', images_dir, blog_logo))
-  end
-
-  def twitter_url
-    "https://twitter.com/share?text=#{current_article.title}" \
-      "&amp;url=#{current_article_url}"
-  end
-  def facebook_url
-    "https://www.facebook.com/sharer/sharer.php?u=#{current_article_url}"
-  end
-  def google_plus_url
-    "https://plus.google.com/share?url=#{current_article_url}"
-  end
-
-  def feed_path
-    '/feed.xml'
-  end
 end
 
 set :css_dir, 'stylesheets'

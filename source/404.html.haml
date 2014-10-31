@@ -1,0 +1,18 @@
+---
+title: Home 
+---
+%header.site-head
+  .vertical
+    .site-head-content.inner
+      - if blog_logo?
+        %a.blog-logo{href: '/'}
+          = image_tag blog_logo, alt: 'Blog Logo'
+      %h1.blog-title= blog_name
+      %h2.blog-description= blog_description
+
+%main.content{role: :main}
+  %article.post.tag-getting-started
+    %h1 
+      %a.blog-logo{href: '/'}
+        Your are lost my friend ;)
+    

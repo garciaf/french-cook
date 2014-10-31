@@ -1,5 +1,3 @@
-# If you have OpenSSL installed, we recommend updating the following line to
-# use "https".
 source 'http://rubygems.org'
 
 gem 'middleman', '~> 3.3.4'
@@ -16,3 +14,7 @@ gem 'redcarpet', '~> 3.1.2'
 # For "summary"-Helper
 gem 'nokogiri', '~> 1.6.3.1'
 gem 'sanitize', '~> 3.0.0'
+
+# For Image resize
+gem 'middleman-simple-thumbnailer'
+gem 'middleman-deploy'

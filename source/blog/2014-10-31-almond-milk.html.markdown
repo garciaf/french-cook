@@ -1,5 +1,5 @@
 ---
-title: almond milk
+title: Almond milk
 date: 2014-10-31 13:22 UTC
 tags: drink, vegan
 cover: almond-milk.jpg

@@ -1,12 +1,15 @@
+%header.site-head{style: "background-image: url(/images/cover.jpg)"}
+  .vertical
+    .site-head-content.inner
+      - if blog_logo?    
+        %a.blog-logo{href: '/'}
+          = image_tag blog_logo, alt: 'Blog Logo'
+      %h1.blog-title
+        %a.blog-logo{href: '/'}
+          = blog_name
+      %h2.blog-description= blog_description
 %main.content{role: :main}
   %article.post.tag-getting-started
-    %header.post-header
-      %a.blog-logo{href: '/'}
-        - if blog_logo?
-          = image_tag blog_logo, alt: 'Blog Logo'
-        - else
-          %span.blog-title= blog_name
-
     %span.post-meta
       %time{datetime: current_article.date.strftime('%Y-%m-%d')}
         = current_article.date.strftime('%d %b %Y')

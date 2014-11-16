@@ -9,7 +9,9 @@ per_page: 12
       - if blog_logo?
         %a.blog-logo{href: '/'}
           = image_tag blog_logo, alt: 'Blog Logo'
-      %h1.blog-title= blog_name
+      %h1.blog-title
+        %a.blog-logo{href: '/'}
+          = blog_name
       %h2.blog-description= tagname
 
 %main.content{role: :main}

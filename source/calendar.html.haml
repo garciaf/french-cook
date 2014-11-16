@@ -9,14 +9,15 @@ pageable: true
         %a.blog-logo{href: '/'}
           = image_tag blog_logo, alt: 'Blog Logo'
       %h1.blog-title
-        Archive for
-        - case page_type
-        - when 'day'
-          = Date.new(year, month, day).strftime('%b %e %Y')
-        - when 'month'
-          = Date.new(year, month, 1).strftime('%b %Y') 
-        - when 'year'
-          = year
+        %a.blog-logo{href: '/'}
+          Archive for
+          - case page_type
+          - when 'day'
+            = Date.new(year, month, day).strftime('%b %e %Y')
+          - when 'month'
+            = Date.new(year, month, 1).strftime('%b %Y') 
+          - when 'year'
+            = year
 
 %main.content{role: :main}
   - page_articles.each_with_index do |article, i|

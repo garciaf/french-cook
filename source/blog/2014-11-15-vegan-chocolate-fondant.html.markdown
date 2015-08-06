@@ -23,6 +23,4 @@ READMORE
 1. Mix everything together
 2. Pour into a mold
 3. Bake at 150 degres for 60 min
-4. Enjoy cold or hot 
-
-Thanks Lisa for sharing
+4. Enjoy cold or hot

@@ -25,5 +25,3 @@ READMORE
 5. Grind it
 6. Filter
 7. Put in the fridge and enjoy 
-
-Thanks Lisa for sharing

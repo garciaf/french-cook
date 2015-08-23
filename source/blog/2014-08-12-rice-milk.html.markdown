@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rice milk
+title: "Rice milk"
 date: 2014-08-12 19:46 UTC
 tags: drink, vegan
 cover: rice-milk.jpg

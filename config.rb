@@ -1,11 +1,8 @@
-require 'sanitize'
-
 ###
 # Blog settings
 ###
 
 # Time.zone = "UTC"
-config = YAML.load_file("parameter.yml")
 activate :i18n, :lang_map => { :en => :english, :fr => :french }, :mount_at_root => :fr
 
 activate :blog do |blog|
@@ -40,11 +37,11 @@ set :casper, {
     description: 'Make the world a better place to eat',
     date_format: '%d %B %Y',
     navigation: true,
-    logo: nil # Optional
+    logo: 'cover.jpg' # Optional
   },
   author: {
     name: 'French Cooker',
-    bio: 'Make the world a better place to eat',
+    bio: 'Developer by day, fighter and cook by night',
     location: 'Berlin',
     website: "http://the-french-cook.com", # Optional
     gravatar_email: 'fab0670312047@gmail.com' # Optional
@@ -71,8 +68,19 @@ ready do
 
   proxy "/author/#{blog_author.name.parameterize}.html", '/author.html', ignore: true
 end
-page '/feed.xml', layout: false
 
+config = YAML.load_file("parameter.yml")
+###
+# Helpers
+###
+activate :deploy do |deploy|
+  deploy.method = :ftp
+  deploy.host = config['deploy']['host']
+  deploy.user = config['deploy']['user']
+  deploy.password = config['deploy']['password']
+  deploy.path = config['deploy']['path']
+  deploy.build_before = true # default: false
+end
 ###
 # Compass
 ###
@@ -99,28 +107,21 @@ page '/feed.xml', layout: false
 #   page "/admin/*"
 # end
 
-# Proxy pages (http://middlemanapp.com/dynamic-pages/)
+# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
 # Helpers
 ###
-activate :deploy do |deploy|
-  deploy.method = :ftp
-  deploy.host = config['deploy']['host']
-  deploy.user = config['deploy']['user']
-  deploy.password = config['deploy']['password']
-  deploy.path = config['deploy']['path']
-  deploy.build_before = true # default: false
-end
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 activate :livereload
 
-# Pretty URLs - http://middlemanapp.com/pretty-urls/
+# Pretty URLs - http://middlemanapp.com/basics/pretty-urls/
 activate :directory_indexes
 
 # Middleman-Syntax - https://github.com/middleman/middleman-syntax
@@ -136,7 +137,6 @@ activate :syntax, line_numbers: false
 #   end
 # end
 
-
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
@@ -148,10 +148,10 @@ set :partials_dir, 'partials'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :asset_hash

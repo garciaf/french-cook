@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Chocolate mousse
 date: 2014-08-14 07:55 UTC
 tags: chocolate, dessert

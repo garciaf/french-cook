@@ -6,6 +6,8 @@ require 'sanitize'
 
 # Time.zone = "UTC"
 config = YAML.load_file("parameter.yml")
+activate :i18n, :lang_map => { :en => :english, :fr => :french }, :mount_at_root => :fr
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -27,22 +29,48 @@ activate :blog do |blog|
 
   # Enable pagination
   blog.paginate = true
-  # blog.per_page = 10
+  blog.per_page = 10
   # blog.page_link = "page/{num}"
 end
 
-# Required
-set :blog_url, 'http://the-french-cook.com/'
-set :blog_name, 'The French cook '
-set :blog_description, 'Make the world a better place to eat'
-set :author_name, 'French Cooker'
-set :author_bio, 'Fight the bad food with the taste of good food ' 
+set :casper, {
+  blog: {
+    url: 'http://the-french-cook.com/',
+    name: 'The French cook',
+    description: 'Make the world a better place to eat',
+    date_format: '%d %B %Y',
+    navigation: true,
+    logo: nil # Optional
+  },
+  author: {
+    name: 'French Cooker',
+    bio: 'Make the world a better place to eat',
+    location: 'Berlin',
+    website: "http://the-french-cook.com", # Optional
+    gravatar_email: 'fab0670312047@gmail.com' # Optional
+  },
+  navigation: {
+    "Home" => "/",
+    "Dev and Fight" => "http://blog.fabbook.fr",
+    "GitHub" => "https://github.com/garciaf"
+  }
+}
 
-# Optional
-set :author_locaton, nil
-set :author_website, nil
-set :blog_logo, nil
+page '/feed.xml', layout: false
+page '/sitemap.xml', layout: false
 
+ignore '/partials/*'
+
+ready do
+  blog.tags.each do |tag, articles|
+    proxy "/tag/#{tag.downcase.parameterize}/feed.xml", '/feed.xml', layout: false do
+      @tagname = tag
+      @articles = articles[0..5]
+    end
+  end
+
+  proxy "/author/#{blog_author.name.parameterize}.html", '/author.html', ignore: true
+end
 page '/feed.xml', layout: false
 
 ###
@@ -99,7 +127,7 @@ activate :directory_indexes
 set :haml, { ugly: true }
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
-activate :syntax, line_numbers: true
+activate :syntax, line_numbers: false
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -108,14 +136,14 @@ activate :syntax, line_numbers: true
 #   end
 # end
 
-helpers do
-end
 
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+set :partials_dir, 'partials'
 
 # Build-specific configuration
 configure :build do

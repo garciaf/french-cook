@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Vegan chocolate fondant
 date: 2014-11-15 20:14 UTC
 tags: vegan, chocolate, dessert

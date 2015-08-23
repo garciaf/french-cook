@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Remake of chocolate coulant
 date: 2015-08-06 05:52 UTC
 tags: chocolate, dessert

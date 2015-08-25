@@ -3,6 +3,12 @@
   %a.nav-close{href: '#'}
     %span.hidden Close
   %ul
+    %li
+      %a{href: localized_path("")} Home
+    - langs.select{|lang| I18n.locale!= lang }.each do |lang|
+      %li
+
+        %a{href: localized_path("", lang)}= t("language.#{lang}")
     - navigation.try(:each) do |label, href|
       - css_class = %W(nav-#{label.parameterize})
       - css_class << "nav-current" if current_page.url == href

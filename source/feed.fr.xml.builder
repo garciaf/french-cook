@@ -1,3 +1,7 @@
+---
+blog: fr
+---
+
 @articles ||= blog.articles[0..5]
 title = settings.casper[:blog][:name]
 subtitle = settings.casper[:blog][:description]

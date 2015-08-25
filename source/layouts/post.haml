@@ -10,12 +10,12 @@
     .vertical
       .main-header-content.inner
         %h1.page-title
-          %a{href: home_path}= blog_settings.name
+          %a{href: localized_path("", I18n.locale)}= blog_settings.name
         %h2.page-description= blog_settings.description
     %a.scroll-down.icon-arrow-left{href: '#content', data: {offset: '-45'}}
       %span.hidden Scroll Down
 
-  %main.content{role: :main}
+  %main#content.content{role: :main}
     %article.post
       %header.post-header
         %h1.post-title= current_article.title

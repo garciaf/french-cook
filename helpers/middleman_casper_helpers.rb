@@ -56,7 +56,15 @@ module MiddlemanCasperHelpers
   def navigation
     casper[:navigation]
   end
+  def localized_path(path, language=nil)
+    language ||= I18n.locale
 
+    if language.to_s == I18n.default_locale.to_s
+      path = "/#{path}"
+    else
+      path = "/#{language}/#{path}";
+    end
+  end
   def is_tag_page?
     current_resource.metadata[:locals]['page_type'] == 'tag'
   end

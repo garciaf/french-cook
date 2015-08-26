@@ -4,7 +4,7 @@ blog: en
 per_page: 6
 ---
 
-%header.main-header.tag-head{cover}
+%header.main-header.tag-head{cover(page_articles.last)}
   %nav.main-nav.overlay.clearfix
     - if blog_settings.logo.present?
       %a.blog-logo{href: home_path}
@@ -15,7 +15,7 @@ per_page: 6
   .vertical
     .main-header-content.inner
       %h1.page-title= tagname
-      %h2.page-description A #{page_articles.count}-post collection
+      %h2.page-description #{page_articles.count} recipe
 
 %main#content.content{role: :main}
   = partial(:page_articles,

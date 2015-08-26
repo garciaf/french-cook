@@ -33,5 +33,3 @@ Vous pouvez conserver la pate d'amande pour d'autre recette et garder au frais v
 ## Astuce
 
 Vous pouvez utiliser la pâte d'amande restante pour faire cette très bonne recette de [Brownie végétarien](/2014/08/08/brownie-vegetalien/)
-
-Merci à Lisa pour le partage

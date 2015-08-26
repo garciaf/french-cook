@@ -23,5 +23,3 @@ READMORE
 * Mettez dans des moules de la forme voulue
 * Cuire 20min à 180°C
 * Dégustez une fois refroidi
-
-Merci à Lisa pour cette création originale

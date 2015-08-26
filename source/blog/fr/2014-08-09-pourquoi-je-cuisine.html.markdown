@@ -30,7 +30,7 @@ J'ai aussi le sentiment d'avoir fait quelque chose de vrai avec mon temps.
 
 ## Ça aide pour le sport
 
-Une amie (Lisa) m'a montré le lien qu'il pouvait y avoir entre nourriture et performance dans le sport.
+Une amie m'a montré le lien qu'il pouvait y avoir entre nourriture et performance dans le sport.
 Grâce à ces enseignements j'ai perdu 10 kg et je ne vois plus les régimes comme une torture mais comme une source de plaisir.
 Le fait de cuisiner permet de maîtriser parfaitement ma nutrition.
 Et avec le poids perdu et la forme retrouvée, mes résultats sportifs s'en retrouvent grandement améliorés.

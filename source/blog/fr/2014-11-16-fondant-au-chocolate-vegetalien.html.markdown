@@ -27,6 +27,3 @@ READMORE
 3. Cuire à 150 degrés pendant 60 minutes
 4. Savourez chaud ou froid ...
 
-Merci à Lisa pour le partage
-
-

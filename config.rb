@@ -75,7 +75,8 @@ set :casper, {
   }
 }
 
-page '/feed.xml', layout: false
+page '/feed.en.xml', layout: false
+page '/feed.fr.xml', layout: false
 page '/sitemap.xml', layout: false
 
 

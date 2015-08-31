@@ -85,7 +85,7 @@ module MiddlemanCasperHelpers
   end
   def image_cover(page = current_page)
     if (src = page.data.cover).present?
-       image_tag image_path(src)
+       image_tag src, resize_to: '700x'
     end
   end
   def cover(page = current_page)

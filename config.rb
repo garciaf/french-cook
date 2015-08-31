@@ -4,6 +4,7 @@
 
 # Time.zone = "UTC"
 activate :i18n, :mount_at_root => :en
+activate :middleman_simple_thumbnailer
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths

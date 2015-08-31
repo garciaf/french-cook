@@ -2,7 +2,7 @@
 layout: post
 title: Vegan brownie
 date: 2015-08-26 17:20 UTC
-tags: dessert, vegan, chocolat
+tags: dessert, vegan, chocolate
 cover: brownie-vegetalien.jpg
 ---
 

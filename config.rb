@@ -63,11 +63,11 @@ set :casper, {
     logo: 'cover.jpg' # Optional
   },
   author: {
-    name: 'French Cooker',
-    bio: 'Developer by day, fighter and cook by night',
+    name: 'The Cooker',
+    bio: "Developer by day, fighter and cook by night",
     location: 'Berlin',
-    website: "http://the-french-cook.com", # Optional
-    gravatar_email: 'fab0670312047@gmail.com' # Optional
+    website: nil, # Optional
+    gravatar_email: 'fabien@the-french-cook.com' # Optional
   },
   navigation: {
     "Dev and Fight" => "http://blog.fabbook.fr",
@@ -141,12 +141,6 @@ set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 activate :syntax, line_numbers: false
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 
 set :css_dir, 'stylesheets'
 

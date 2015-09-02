@@ -30,5 +30,5 @@ Utilisez un surnom en rapport avec la cuisine, pour rendre le combat plus épic�
 
 ## Résultat
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/juKRrCvrcpM" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="400" src="//www.youtube.com/embed/juKRrCvrcpM" frameborder="0" allowfullscreen></iframe>
 

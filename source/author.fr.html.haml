@@ -1,7 +1,8 @@
 ---
 pageable: true
 per_page: 6
-blog: en
+blog: fr
+lang: fr
 cover: cover.jpg
 ---
 
@@ -21,18 +22,20 @@ cover: cover.jpg
         %span.hidden #{blog_author.name}'s Picture
   %h1.author-title= blog_author.name
   - if blog_author.bio.present?
-    %h2.author-bio= blog_author.bio
+    %h2.author-bio= t('blog_author.bio')
   .author-meta
-    - if blog_author.location.present?
-      %span.author-location.icon-location= blog_author.location
-    - if blog_author.gravatar_email.present?
-      %span.author-location.icon-link= mail_to blog_author.gravatar_email
-    - if blog_author.website.present?
-      %span.author-link.icon-link
-        %a{href: blog_author.website}= blog_author.website
     %span.author-stats
       %i.icon-stats
       = pluralize(blog.articles.count, 'post')
+    - if blog_author.location.present?
+      %span.author-location.icon-location= blog_author.location
+    - if blog_author.website.present?
+      %span.author-link.icon-link
+        %a{href: blog_author.website}= blog_author.website
+    - if blog_author.twitter.present?
+      %span.author-twitter
+        %a{href: blog_author.twitter}
+          %span.icon-twitter
 
 %main#content.content{role: :main}
   = partial(:page_articles,

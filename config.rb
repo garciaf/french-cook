@@ -159,7 +159,18 @@ ignore '/calendar_en.html.haml'
 ignore '/calendar_fr.html.haml'
 
 ready do
-  proxy "/author/#{blog_author.name.parameterize}.html", '/author.html', ignore: true
+  langs.each do |locale|
+    if locale == I18n.default_locale
+      proxy "/author/#{blog_author.name.parameterize}.html", "/author.#{locale}.html", ignore: true do
+        ::I18n.locale = locale
+      end
+    else
+      
+      proxy "/#{locale}/author/#{blog_author.name.parameterize}.html", "/author.#{locale}.html", ignore: true do
+        ::I18n.locale = locale
+      end
+    end
+  end
 end
 
 

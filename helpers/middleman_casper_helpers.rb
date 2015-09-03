@@ -83,11 +83,19 @@ module MiddlemanCasperHelpers
   def current_article_url
     URI.join(blog_settings.url, current_article.url)
   end
+  
   def image_cover(page = current_page)
     if (src = page.data.cover).present?
        image_tag src, resize_to: '700x'
     end
   end
+  
+  def cover_url(page = current_page)
+    if (src = page.data.cover).present?
+      image_path(src)
+    end
+  end
+
   def cover(page = current_page)
     if (src = page.data.cover).present?
       { style: "background-image: url(#{image_path(src)})" }
@@ -126,10 +134,20 @@ module MiddlemanCasperHelpers
     end
   end
   
-  def home_path
-    "#{blog.options.prefix.to_s}/"
+  def home_path(language=nil)
+    language ||= I18n.locale
+    if language.to_s == I18n.default_locale.to_s
+      "/"
+    else
+      "/#{language}/"
+    end
   end
+  
   def author_path
-    "#{blog.options.prefix.to_s}/author/#{blog_author.name.parameterize}/"
+    if I18n.locale == I18n.default_locale
+      "/author/#{blog_author.name.parameterize}/"
+    else
+      "/#{I18n.locale}/author/#{blog_author.name.parameterize}/"
+    end
   end
 end

@@ -21,15 +21,13 @@
 
       %footer.site-footer.clearfix
         %section.copyright
-          %a{href: home_path}= blog_settings.name
+          =link_to "the cook", home_path
+          , 
+          = link_to "the dev", "http://fabbook.fr"
+          and
+          = link_to "the photographer", "http://fabphoto.fr/"
           &copy;
           = Time.now.year
-        %section.poweredby
-          -#
-            Proudly published with
-            %a{href: 'http://middlemanapp.com'} Middleman
-          Casper theme powered by
-          %a{href: 'https://ghost.org'} Ghost
 
     = javascript_include_tag :application
     

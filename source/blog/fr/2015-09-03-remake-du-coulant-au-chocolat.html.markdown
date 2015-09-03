@@ -1,7 +1,9 @@
 ---
+layout: post
 title: Remake du coulant au chocolat
 date: 2015-09-03 17:16 UTC
 tags: chocolat, dessert
+lang: fr
 cover: remake-coulant-chocolat.jpg
 ---
 

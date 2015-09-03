@@ -24,7 +24,7 @@ activate :blog do |blog|
 
   blog.tag_template = "tag_en.html"
   blog.calendar_template = "calendar_en.html"
-
+  blog.layout = "post"
   # Enable pagination
   blog.paginate = true
   blog.per_page = 6
@@ -48,7 +48,7 @@ activate :blog do |blog|
 
   blog.tag_template = "tag_fr.html"
   blog.calendar_template = "calendar_fr.html"
-
+  blog.layout = "post"
   # Enable pagination
   blog.paginate = true
   blog.per_page = 6

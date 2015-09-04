@@ -25,7 +25,7 @@ cover: cover.jpg
   .author-meta
     %span.author-stats
       %i.icon-stats
-      = pluralize(blog.articles.count, 'post')
+      = pluralize(blog.articles.count, 'recipe')
     - if blog_author.location.present?
       %span.author-location.icon-location= blog_author.location
     - if blog_author.website.present?

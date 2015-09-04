@@ -92,7 +92,7 @@ module MiddlemanCasperHelpers
   
   def cover_url(page = current_page)
     if (src = page.data.cover).present?
-      image_path(src)
+      URI.join(blog_settings.url, image_path(src)) 
     end
   end
 

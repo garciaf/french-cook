@@ -8,7 +8,21 @@
     %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
     %meta{name: 'HandheldFriendly', content: 'True'}
     %meta{:content => "ejoC2e_cIQ_Di-yQLQs2a_KnSbtaVmz0-0jaS8GlPrk", :name => "google-site-verification"}
-    %meta{:content => cover_url, :property=> "og:image"}
+    // Twitter
+    %meta{content: page_title, name: "twitter:title"}
+    %meta{content: page_description, name: "twitter:description"}
+    %meta{content: cover_url, name: "twitter:image:src"}
+    // Open Graph General (Facebook & Pinterest)
+    %meta{content: cover_url, property: "og:image"}
+    %meta{content: page_title, property: "og:title"}
+    %meta{content: blog_settings.name, property: "og:site_name"}
+    %meta{content: cover_url, property: "og:image"}
+    %meta{content: page_description, property: "og:description"}
+    %meta{content: 'website', property: "og:type"}
+    // Google plus
+    %meta{itemprop: 'name',  content: page_title}
+    %meta{itemprop: 'description', content: page_description }
+    %meta{itemprop:'image', content: cover_url }
     = feed_tag :atom, feed_path, title: "Atom Feed"
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application

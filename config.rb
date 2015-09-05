@@ -73,7 +73,7 @@ set :casper, {
   navigation: {
     "Dev and Fight" => "http://fabbook.fr",
     "Fabphoto" => "http://fabphoto.fr",
-    "GitHub" => "https://github.com/garciaf"
+    "Fabfight" => "http://fabfight.com"
   }
 }
 

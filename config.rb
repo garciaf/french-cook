@@ -65,7 +65,7 @@ set :casper, {
   },
   author: {
     name: 'The Cooker',
-    bio: "Developer by day, fighter and cook by night",
+    bio: "Developer by day, fighter, cook and photographer by night",
     location: 'Berlin',
     website: nil, # Optional
     gravatar_email: 'fabien@the-french-cook.com' # Optional

@@ -2,6 +2,7 @@
 pageable: true
 per_page: 6
 blog: fr
+lang: fr
 ---
 
 %header.main-header.tag-head{cover(page_articles.first)}
@@ -23,7 +24,8 @@ blog: fr
           = Date.new(year, month, 1).strftime('%b %Y') 
         - when 'year'
           = year
-      %h2.page-description #{page_articles.count} recipe
+      %h2.page-description
+        = pluralize(page_articles.count, 'recette')
 
 %main#content.content{role: :main}
   = partial(:page_articles,

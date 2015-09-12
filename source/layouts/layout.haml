@@ -33,17 +33,8 @@
 
     .site-wrapper
       = yield
-
-      %footer.site-footer.clearfix
-        %section.copyright
-          =link_to "the cook", home_path
-          , 
-          = link_to "the dev", "http://fabbook.fr"
-          and
-          = link_to "the photographer", "http://fabphoto.fr/"
-          &copy;
-          = Time.now.year
-
+    = partial(:footer)
+      
     = javascript_include_tag :application
     
     :javascript 

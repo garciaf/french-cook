@@ -32,7 +32,7 @@ READMORE
 8. Dégustez
 
 
-## Randons à César ce qui appartient à César
+## Rendons à César ce qui appartient à César
 
 La source de cette recette se trouve [ici](http://youtu.be/tgUL_e_-UBk) la présentatrice est un peu énervante mais la recette est délicieuse.
 

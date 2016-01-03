@@ -6,3 +6,5 @@ tags:
 ---
 
 Because we should do it 
+
+<iframe src="https://embed-ssl.ted.com/talks/jamie_oliver.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

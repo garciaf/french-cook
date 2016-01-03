@@ -1,6 +1,6 @@
 ---
 title: Butternut soup
-lang: fr
+lang: en
 date: 2015-09-07 09:13 UTC
 tags: soup
 cover: soupe-butternut.jpg

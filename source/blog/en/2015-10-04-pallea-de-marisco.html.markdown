@@ -45,3 +45,10 @@ You need two things, first a fish soup that you will use to cook the rice and th
   - Let it cook till there is almost no water 
   - Wait 10 minute to let the paella cool down
   - Enjoy
+
+## The recipe live 
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/WXImqdK2cik" frameborder="0" allowfullscreen></iframe>
+</div> 
+
+

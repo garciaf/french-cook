@@ -11,30 +11,30 @@ READMORE
 
 ## Ingredient (for 4 persons)
 
-* bread dough (500 gr)
-* 1 vegan cheese
+* Bread dough (500 gr)
+* 1 [Vegan cheese](/2016/03/13/vegan-cheese/)
 * 1 zucchini
 * 100 gr of spinach
 * 1 onion 
 * 1 clove of garlic
 * Tomato puree
 * Oregano
-* salt, pepper 
+* Salt, pepper 
 
 ## Preparation
 
 ### The tomato sauce
 
-* cook the garlic and the onion in olive oil
-* when onion and garlic are soft add the tomato puree 
+* Cook the garlic and the onion in olive oil
+* When onion and garlic are soft add the tomato puree 
 * Add the salt, oregano and pepper 
 * Let it cook till it's thicker
 
 ### The pizza
 
-* flat the dough and add the tomato sauce
-* cut the zucchini in small slices and put it on the top
-* add the spinach and the cheese
+* Flat the dough and add the tomato sauce
+* Cut the zucchini in small slices and put it on the top
+* Add the spinach and the cheese
 * Dress as you like
 * Cook it 10 min at 220 C
 * Enjoy 

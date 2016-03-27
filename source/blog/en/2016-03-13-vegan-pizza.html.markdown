@@ -1,5 +1,5 @@
 ---
-title: Vegan pizza
+title: Pizza vegan
 date: 2016-03-13 09:17 UTC
 tags: vegan, pizza
 cover: pizza.jpg

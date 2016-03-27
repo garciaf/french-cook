@@ -2,7 +2,7 @@
 title: Vegan cheese
 date: 2016-03-13 08:55 UTC
 tags: vegan, cheese
-published: false
+cover: vegan-cheese.jpg
 ---
 
 You want to have some good cheese but you do not want to have an animal suffering for this? It's possible with this recipe
